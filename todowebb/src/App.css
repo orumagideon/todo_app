@@ -1,0 +1,131 @@
+/* Importing the Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0; /* A light gray background for the whole page */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Main container styling */
+.App {
+  text-align: center;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #ffffff; /* White background for the todo list container */
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for a card-like appearance */
+}
+
+/* Styling the title */
+.todo-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 700;
+}
+
+/* Styling the form container */
+.todo-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Styling the input fields */
+.todo-form input[type="text"] {
+  padding: 12px;
+  font-size: 1rem;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.todo-form input[type="text"]:focus {
+  border-color: #666; /* Darker border on focus */
+  outline: none;
+}
+
+/* Styling the Add button */
+.todo-form button {
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.todo-form button:hover {
+  background-color: #555;
+}
+
+/* Styling the todo list container */
+.todo-list {
+  margin-top: 20px;
+}
+
+/* Styling each todo item */
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 15px;
+  background-color: #f9f9f9; /* Slightly lighter background color for items */
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05); /* Small shadow for depth */
+  transition: transform 0.2s ease-in-out;
+}
+
+.todo-item:hover {
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.todo-item input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.3); /* Slightly larger checkboxes */
+}
+
+/* Styling the todo text */
+.todo-text {
+  flex-grow: 1;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.todo-text .completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todo-text p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Styling the Delete button */
+.todo-item button {
+  background-color: #ff4d4d;
+  border: none;
+  padding: 8px 12px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.todo-item button:hover {
+  background-color: #ff1a1a;
+}
