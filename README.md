@@ -1,34 +1,50 @@
-# Todo API with FastAPI
+# TaskMaster - Todo Application
 
-This is a simple todo application built with FastAPI. It allows users to create, read, update, and delete todo items. The project uses SQLite for data storage and SQLAlchemy for ORM.
+TaskMaster is a full-stack todo application built with FastAPI for the backend and React for the frontend. It allows users to create, read, update, and delete todo items, providing a clean and user-friendly interface for managing tasks.
 
 ## Features
 
-- **Create a Todo**: Add a new todo item.
+### Backend (FastAPI)
+
+- **Create a Todo**: Add a new todo item to the database.
 - **Read Todos**: Retrieve a list of all todos or get a specific todo by ID.
-- **Update a Todo**: Modify an existing todo item.
+- **Update a Todo**: Modify an existing todo item in the database.
 - **Delete a Todo**: Remove a todo item from the database.
 
-## Installation
+### Frontend (React)
 
-### Clone the Repository
+- **Interactive UI**: Add, view, update, and delete tasks with an easy-to-use interface.
+- **Task Status**: Mark tasks as completed or incomplete.
+- **Responsive Design**: The UI adapts to different screen sizes, providing a consistent experience on both desktop and mobile devices.
 
-```bash
-git clone https://github.com/yourusername/todo-api.git
-cd todo-api
-Set Up the Virtual Environment
-python -m venv env
-source env/bin/activate  # On Windows use `env\Scripts\activate`
-Install Dependencies
-pip install -r requirements.txt
-Configuration
-The application uses SQLite for database storage. The database file will be created in the project directory (todo_api.db).
-Usage
-Start the Application
-uvicorn main:app --reload
-The server will run on http://127.0.0.1:8000.
-API Endpoints
-Create a Todo
+## Project Structure
+
+TaskMaster/ │ ├── backend/ │ ├── app/ │ │ ├── main.py │ │ ├── routers/ │ │ └── database/ │ └── requirements.txt │ └── frontend/ ├── src/ │ ├── components/ │ │ ├── TodoItem.js │ │ └── TodoForm.js │ ├── App.js │ ├── App.css │ └── index.js └── package.json
+
+## Backend Setup (FastAPI)
+
+### Installation
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/orumagideon/taskmaster.git
+   cd taskmaster/backend
+   ```
+
+2. Set Up the Virtual Environment
+   python -m venv env
+   source env/bin/activate # On Windows use `env\Scripts\activate`
+3. Install Dependencies
+   pip install -r requirements.txt
+   Configuration
+   The application uses SQLite for database storage. The database file will be created in the project directory (e.g., todo_api.db).
+   Usage
+4. Start the Application
+   uvicorn app.main:app --reload
+   The server will run on http://127.0.0.1:8000.
+   API Endpoints
+   Create a Todo
 
 POST /post/todos/
 Request Body: TodoCreate
@@ -60,7 +76,21 @@ completed: Boolean
 Error Handling
 404 Not Found: Returned when a todo item with the specified ID does not exist.
 400 Bad Request: Returned for invalid input or errors during todo creation.
-Development
+Frontend Setup (React)
+Installation
+i) Navigate to the Frontend Directory
+cd ../frontend
+ii) Install Dependencies
+iii) npm install
+
+Usage
+Start the React Application
+\*npm start
+The React app will run on http://localhost:3000.
+Custom Styling
+The application uses Roboto as the primary font.
+The UI is styled using App.css. You can further customize the look and feel by modifying this file.
+Contributing
 To contribute or modify the application:
 
 Fork the repository.
@@ -68,8 +98,6 @@ Create a new branch for your changes.
 Submit a pull request with a description of your changes.
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
-NOTE: IMPLEMENTATION OF FRONT END WILL BE COMPLETED SOON!!
 
 Contact
-For questions or feedback, please reach out orumagideon535@gmail.com
-```
+For questions or feedback, please reach out via orumagideon535@gmail.com.

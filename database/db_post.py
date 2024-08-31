@@ -40,7 +40,7 @@ def delete_todo_by_id(db: Session, todo_id: int):
     db.commit()
     return todo
 
-def update_todo_by_id(db: Session, todo_id: int, updated_todo: TodoUpdate):
+def update_todo_by_id(db: Session, todo_id: int, todo_data: TodoUpdate):
     """
     Update an existing todo by its ID.
     """
@@ -49,9 +49,9 @@ def update_todo_by_id(db: Session, todo_id: int, updated_todo: TodoUpdate):
         return None
     
     # Update the fields
-    todo.title = updated_todo.title
-    todo.description = updated_todo.description
-    todo.completed = updated_todo.completed
+    todo.title = todo_data.title
+    todo.description = todo_data.description
+    todo.completed = todo_data.completed
     
     db.commit()
     db.refresh(todo)
